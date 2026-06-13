@@ -1,5 +1,5 @@
     :root {
-        /* Color Palette - Premium Dark Mode */
+        /* colors */
         --bg-base: #0f172a;
         --bg-surface: rgba(30, 41, 59, 0.4);
         --bg-surface-hover: rgba(30, 41, 59, 0.7);
@@ -18,11 +18,11 @@
         --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.2);
         --shadow-glow: 0 0 25px var(--accent-glow);
 
-        /* Typography */
+        /* fonts */
         --font-heading: 'Outfit', sans-serif;
         --font-body: 'Inter', sans-serif;
 
-        /* Animation */
+        /* animations */
         --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
