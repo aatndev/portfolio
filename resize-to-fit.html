@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize to Fit by aatndev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <main class="container page-content">
+        <div class="nav-bar fade-in">
+            <a href="index.html" class="btn btn-outline back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+        </div>
+
+        <article class="game-details fade-in delay-1">
+            <header class="detail-header">
+                <h1 class="page-title detail-title">Resize to Fit</h1>
+                <div class="header-actions">
+                    <a href="https://github.com/aatndev/Resize-to-Fit-public" target="_blank" class="btn btn-transparent">
+                        Github (Source Code)
+                        <!-- <img src="github.png" width="18" height="18" /> -->
+                    </a>
+
+                    <a href="https://itch.io/jam/metroidvania-month-32/rate/4676450" target="_blank" class="btn btn-transparent">
+                        Metroidvania M32 Game Jam
+                    </a>
+
+                    <a href="https://aatndev.itch.io/resize-to-fit" target="_blank" class="btn btn-primary play-btn">
+                        Play Game 
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" 
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3">
+                    </polygon></svg></a>
+                </div>
+            </header>
+
+            <div class="details-grid">
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Game Format</h2>
+                    <ul class="styled-list">
+                        <li><b>Genre: </b>Endless</li>
+                        <li><b>Published: </b>15 June 2026</li>
+                        <li><b>Type: </b>Single Player</li>
+                        <li><b>Platform: </b>PC / Web</li>
+                    </ul>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Technical Details</h2>
+                    <div class="round-tags">
+                        <span class="tag">Unity 3D</span>
+                        <span class="tag">C#</span>
+                    </div>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Game Mechanics</h2>
+                    <ul class="styled-list">
+                        <li><b>Movement: </b>Player can move the Cylinder in horizontal direction</li>
+                        <li><b>Wall (Obstacle) Generation: </b>Procedural generation of oncoming walls, 
+                            each featuring gap(s) of varying widths and positions.</li>
+                        <li><b>Resizing: </b>Player can resize the Cylinder's diameter (shrink or grow) to fit through the gap</li>
+                        <li><b>Score: </b>The larger the size of the cylinder, the more points earned based on the Scoring Formula</li>
+                        <li><b>Speed Progression: </b>Speed gradually increases after every successfully passed gap, reducing reaction time.</li>
+                    </ul>
+                </section>
+                
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Scoring Formula</h2>
+                    <code style = "color: white;">
+                        slope = (maxPoints - minPoints) / (maxScale - minScale)<br>
+                        points = minPoints + ((currentScale - minScale) * slope)
+                    </code>
+                </section>
+                
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Dynamics</h2>
+                    <ul class="styled-list">
+                        <li><b>Risk vs Reward Balancing: </b>Players constantly decide between 
+                            going bigger for higher scores or shrinking to survive tighter gaps.</li>
+                        <li><b>Last-second saves </b>Tight situations where players barely shrink 
+                            or reposition in time to slip through a gap.</li>
+                        <li><b>Overambition: </b>Players often push for higher scores on 
+                            risky gaps, leading to avoidable crashes when they overcommit.</li>
+                    </ul>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Core Loop</h2>
+                    <div class="round-tags long-round">
+                        <span class="tag">Read gap between approachin walls -> Adjust Size and Position -> Pass Safely -> Gain score
+                            -> Speed increases [Next Gap] -> Repeat </span>
+                    </div>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Goal</h2>
+                    <ul class="styled-list">
+                        <li><b>1. </b>Survive as long as possible by fitting through gaps between endless approaching walls</li>
+                        <li><b>2. </b>Maximize your score by growing as large as possible while still fitting through the gap</li>
+                    </ul>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Rules</h2>
+                    <ul class="styled-list">
+                        <li><b>Collision:</b> Any contact with a wall results in immediate game over.</li>
+                        <li><b>Fit:</b> The cylinder must fit fully within the gap to pass through it.</li>
+                        <li><b>Reward:</b> Larger sizes give higher scores, while the cylinder can be shrunk to any size to fit the gap.</li>
+                    </ul>
+                </section>
+
+                <section class="detail-section glass-panel">
+                    <h2 class="section-heading">Feedback</h2>
+                    <ul class="styled-list">
+                        <li>Speed increases when passing through the gap</li>
+                        <li>Audio feedback plays while increasing the cylinder size</li>
+                        <li>Audio feedback plays when player hits a wall</li>
+                        <li>UI feedback displays the score dynamically when passing through a gap</li>
+                    </ul>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
