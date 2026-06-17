@@ -18,26 +18,37 @@
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
     </div>    
+    <!--
     <div class="tabs">
-        <a href="#me" class="tab page-title"><label>Aatndev</label></a>
+        <a href="#me" class="logo">Aatndev</a>
         <a href="#mygames" class="tab"><label>My Games</label></a>
-        <!--<a href="#collabgames" class="tab"><label>Collab Games</label></a>-->
         <a href="#contact" class="tab"><label>Get in Touch</label></a>
-    </div>
+    </div> 
+    -->
+    <!--<a href="#collabgames" class="tab"><label>Collab Games</label></a>-->
 
-    <header class="fade-in header">
-        <div class="container tab-content topmargin" id="me">
-            <h2 class="section-heading">Who am I?</h2>
-            <p class="intro-text">Name: 
-                <span class="highlight">Aadithyan (a.k.a aatndev)</span>    
-            </p>
-            <p class="intro-text">Profession: 
-                <span class="highlight">BSc Computer Science & Mathematics Student</span>    
-            </p>
-            <p class="intro-text">What I do:
-                <span class="highlight gradient_purplish">
-                    <a href="#mygames" style="text-decoration: none;">Aspiring Game Designer & Unity Developer</a>&emsp;
-                </span>
+    <nav class="navbar">
+        <a href="#me" class="logo">Aatndev</a>
+
+        <div class="menu" id="menu">
+            <a href="#mygames">My Games</a>
+            <a href="#contact">Get in Touch</a>
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+    </nav>
+
+    <main class="container">
+        <section class = "section-part fade-in delay-1" id="me">
+            <h2 class="section-heading">About me</h2>
+            <p class="intro-text">Aadithyan (@aatndev)</p>
+            <p class="intro-text">BSc Computer Science & Mathematics Student</p>
+            <p class="intro-text gradient_purplish">
+                <a href="#mygames" style="text-decoration: none;">
+                    Aspiring Game Designer & Unity Developer
+                </a>&emsp;
             </p>
             <ul class = "text-desc styled-list">
                 <li>I develop games using Unity, focusing on gameplay and design.<br>
@@ -45,17 +56,13 @@
                 <li>I’m currently building small projects to improve my skills and understanding.
                 </li>
             </ul>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="games-section fade-in delay-1">
+        </section>
+        <section class="section-part fade-in delay-1">
             <h2 class="section-heading tab-content" id = "mygames">My Games</h2>
             <div class="games-grid">
                 <!--Direct the Plane-->
                 <div class="game-card">
                     <div class="card-image-wrapper">
-                        
                         <img src="https://img.itch.zone/aW1hZ2UvNDA1MDI3NS8yNDE1NDUyMy5wbmc=/original/lkAWi2.png"
                             alt="Direct the Plane Image" class="card-image">
                         <div class="card-overlay"></div>
@@ -115,11 +122,12 @@
             </div>
         </section>
 
-        <section id="contact" class="section contact-section">
+        <section id="contact" class="section-part">
             <h2 class="section-heading">Get In Touch</h2>
 
             <div class="contact-links">
-                <a href="https://mail.google.com/mail/?view=cm&to=ksaadithyan@gmail.com" target="_blank" class="contact-item">
+                <a href="https://mail.google.com/mail/?view=cm&to=ksaadithyan@gmail.com" 
+                target="_blank" class="contact-item">
                 Email
                 </a>
 
