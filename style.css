@@ -309,6 +309,25 @@
         flex-grow: 1;
     }
 
+    .game-jam-title{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .game-jam-title span{
+        background-color: #e0733c74;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+
+        margin-left: auto;
+    }
+
     .game-title {
         font-size: 24px;
         margin-bottom: 8px;
