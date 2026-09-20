@@ -560,8 +560,8 @@
     }
 
     /* Bottom Left Corner: Playable Platform Device Icons */
-    .card-corner-badge.badge-bottom-left {
-        bottom: 18px;
+    .card-corner-badge.badge-top-left {
+        top: 18px;
         left: 18px;
     }
 
@@ -1343,8 +1343,8 @@
         right: 10px;
     }
 
-    .card-corner-badge.badge-bottom-left {
-        bottom: 10px;
+    .card-corner-badge.badge-top-left {
+        top: 10px;
         left: 10px;
     }
 /**/
