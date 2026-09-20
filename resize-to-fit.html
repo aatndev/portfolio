@@ -15,6 +15,39 @@
         <div class="glow-orb orb-2"></div>
     </div>
 
+    <!-- Universal Fixed Top Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" title="Back to Home">
+                <span class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <circle cx="17" cy="11" r="1" fill="currentColor"></circle>
+                        <circle cx="15" cy="13" r="1" fill="currentColor"></circle>
+                        <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                    </svg>
+                </span>
+                <span class="logo-text">aatndev</span>
+            </a>
+
+            <div class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <a href="games.html" class="active">Games</a>
+                <a href="support.html">Support</a>
+                <a href="contacts.html">Contacts</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
     <main class="container page-content">
         <div class="nav-bar fade-in">
             <a href="index.html" class="btn btn-outline back-btn">
@@ -27,9 +60,8 @@
             <header class="detail-header">
                 <h1 class="page-title detail-title">Resize to Fit</h1>
                 <div class="header-actions">
-                    <a href="https://github.com/aatndev/Resize-to-Fit-public" target="_blank" class="btn btn-transparent">
+                    <a href="https://github.com/aatndev/Resize-to-Fit-public" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                         Github (Source Code)
-                        <!-- <img src="github.png" width="18" height="18" /> -->
                     </a>
 
                     <!--<a href="https://itch.io/jam/metroidvania-month-32/rate/4676450" target="_blank" class="btn btn-transparent">

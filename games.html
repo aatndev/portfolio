@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Library — Aadithyan (@aatndev)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Ambient Glow Orbs -->
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Universal Fixed Top Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" title="Back to Home">
+                <span class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <circle cx="17" cy="11" r="1" fill="currentColor"></circle>
+                        <circle cx="15" cy="13" r="1" fill="currentColor"></circle>
+                        <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                    </svg>
+                </span>
+                <span class="logo-text">aatndev</span>
+            </a>
+
+            <div class="menu" id="menu">
+                <a href="index.html" class="">Home</a>
+                <a href="games.html" class="active">Games</a>
+                <a href="support.html" class="">Support</a>
+                <a href="contacts.html" class="">Contacts</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main class="container" style="max-width: 1140px; margin: 0 auto; padding: 40px 24px 80px;">
+        <header class="page-hero fade-in">
+            <h1 class="page-hero-title">Games Library</h1>
+            <p class="page-hero-sub">Complete catalog of games, game jam submissions, and gameplay prototypes built with Unity & C#.</p>
+        </header>
+
+        <section class="games-lib-grid fade-in delay-1">
+            <!-- Game 1: Direct the Plane -->
+            <a href="direct-the-plane.html" class="game-lib-card">
+                <div class="game-lib-thumb">
+                    <img src="https://img.itch.zone/aW1hZ2UvNDA1MDI3NS8yNDE1NDUyMy5wbmc=/original/lkAWi2.png" alt="Direct the Plane">
+                </div>
+                <div class="game-lib-body">
+                    <h3 class="game-lib-title">Direct the Plane</h3>
+                    <p class="game-lib-desc">A fast-paced endless flying game featuring boost mechanics, obstacle dodging, and navigating through continuously spawning pathways.</p>
+                    <div class="round-tags" style="margin-bottom: 16px;">
+                        <span class="tag">Windows</span>
+                        <span class="tag">macOS</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">Web</span>
+                    </div>
+                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                </div>
+            </a>
+
+            <!-- Game 2: Resize to Fit -->
+            <a href="resize-to-fit.html" class="game-lib-card">
+                <div class="game-lib-thumb">
+                    <img src="https://img.itch.zone/aW1nLzI3ODY3NTkxLnBuZw==/original/1wU5yC.png" alt="Resize to Fit">
+                </div>
+                <div class="game-lib-body">
+                    <h3 class="game-lib-title">Resize to Fit</h3>
+                    <p class="game-lib-desc">Endless obstacle game where you control a puck, scaling its size and positioning to fit through oncoming wall gaps and survive.</p>
+                    <div class="round-tags" style="margin-bottom: 16px;">
+                        <span class="tag">Windows</span>
+                        <span class="tag">Web</span>
+                    </div>
+                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                </div>
+            </a>
+
+            <!-- Game 3: Fit the Window -->
+            <a href="fit-the-window.html" class="game-lib-card">
+                <div class="game-lib-thumb">
+                    <img src="https://img.itch.zone/aW1nLzI4NjIxODY3LnBuZw==/original/yyqaSf.png" alt="Fit the Window">
+                </div>
+                <div class="game-lib-body">
+                    <h3 class="game-lib-title">Fit the Window</h3>
+                    <p class="game-lib-desc">Unique mouse-controlled scaling game. Move and scroll to fit the window through obstacles without touching the walls.</p>
+                    <div class="round-tags" style="margin-bottom: 16px;">
+                        <span class="tag">Mouse Only</span>
+                        <span class="tag">Web</span>
+                        <span class="tag">Windows</span>
+                    </div>
+                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                </div>
+            </a>
+
+            <!-- Game 4: Save your Time -->
+            <a href="save-your-time.html" class="game-lib-card">
+                <div class="game-lib-thumb" style="background: radial-gradient(circle at center, #95945c 0%, #303020 50%, #10100a 100%); display: flex; align-items: center; justify-content: center;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <div class="game-lib-body">
+                    <h3 class="game-lib-title">Save your Time</h3>
+                    <p class="game-lib-desc">Parkour adventure game where your time ticks away whenever you move. Reach the goal with precision dash and sword mechanics.</p>
+                    <div class="round-tags" style="margin-bottom: 16px;">
+                        <span class="tag">Adventure</span>
+                        <span class="tag">Web</span>
+                    </div>
+                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                </div>
+            </a>
+
+            <!-- Game 5: Code Snippet Guess -->
+            <a href="code-snippet-guess.html" class="game-lib-card">
+                <div class="game-lib-thumb">
+                    <img src="https://img.itch.zone/aW1nLzIyNzA4Mjg3LnBuZw==/original/H32fC4.png" alt="Code Snippet Guess">
+                </div>
+                <div class="game-lib-body">
+                    <h3 class="game-lib-title">Code Snippet Guess</h3>
+                    <p class="game-lib-desc">An educational trivia quiz game where players guess the programming language shown in code snippets.</p>
+                    <div class="round-tags" style="margin-bottom: 16px;">
+                        <span class="tag">Educational</span>
+                        <span class="tag">Web</span>
+                    </div>
+                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer style="text-align: center; padding: 40px 20px 30px; color: var(--text-secondary); font-size: 14px; border-top: 1px solid var(--border-glass);">
+        <p>© 2026 Aadithyan (<a href="https://aatndev.itch.io" target="_blank" style="color: #60a5fa; text-decoration: none;">@aatndev</a>). Built with Unity & passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

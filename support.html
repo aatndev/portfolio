@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Aadithyan (@aatndev)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Ambient Glow Orbs -->
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Universal Fixed Top Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="index.html" class="logo" title="Back to Home">
+                <span class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <circle cx="17" cy="11" r="1" fill="currentColor"></circle>
+                        <circle cx="15" cy="13" r="1" fill="currentColor"></circle>
+                        <rect x="2" y="6" width="20" height="12" rx="6"></rect>
+                    </svg>
+                </span>
+                <span class="logo-text">aatndev</span>
+            </a>
+
+            <div class="menu" id="menu">
+                <a href="index.html" class="">Home</a>
+                <a href="games.html" class="">Games</a>
+                <a href="support.html" class="active">Support</a>
+                <a href="contacts.html" class="">Contacts</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <main class="container" style="max-width: 960px; margin: 0 auto; padding: 40px 24px 80px;">
+        <header class="page-hero fade-in">
+            <h1 class="page-hero-title">Support & Feedback</h1>
+            <p class="page-hero-sub">Support game development, report issues, or provide feedback to help improve my games.</p>
+        </header>
+
+        <section class="details-grid fade-in delay-1" style="grid-template-columns: 1fr; margin-top: 20px;">
+            <div class="glass-panel" style="display: flex; flex-direction: column; gap: 16px;">
+                <h2 class="section-heading" style="margin-bottom: 0;">Support on itch.io</h2>
+                <p>All of my games on itch.io are free to play in your browser or download. If you enjoy playing my games, consider rating, following, or leaving a donation on itch.io.</p>
+                <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+                    <a href="https://aatndev.itch.io" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Visit itch.io Profile
+                    </a>
+                    <a href="https://aatndev.itch.io/save-your-time/donate" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        Support on itch.io
+                    </a>
+                </div>
+            </div>
+
+            <div class="glass-panel" style="display: flex; flex-direction: column; gap: 16px;">
+                <h2 class="section-heading" style="margin-bottom: 0;">Bug Reports & Suggestions</h2>
+                <p>Found a bug, physics glitch, or have an idea for new levels and mechanics? You can reach out directly via email or open an issue on the relevant GitHub repository.</p>
+                <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+                    <a href="mailto:ksaadithyan@gmail.com?subject=Game%20Feedback%20/%20Bug%20Report" class="btn btn-primary">
+                        Send Feedback via Email
+                    </a>
+                    <a href="https://github.com/aatndev" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        GitHub Issues
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer style="text-align: center; padding: 40px 20px 30px; color: var(--text-secondary); font-size: 14px; border-top: 1px solid var(--border-glass);">
+        <p>© 2026 Aadithyan (<a href="https://aatndev.itch.io" target="_blank" style="color: #60a5fa; text-decoration: none;">@aatndev</a>). Built with Unity & passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
