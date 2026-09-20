@@ -518,7 +518,10 @@
     }
 
     .showcase-card.active:hover .showcase-card-bg {
-        transform: scale(1.04);
+        transform: scale(1.2);
+    }
+    .showcase-card-bg-contain {
+        object-fit: contain;
     }
 
     .showcase-card-overlay {
@@ -848,7 +851,11 @@
     }
 
     .game-lib-card:hover .game-lib-thumb img {
-        transform: scale(1.06);
+        transform: scale(1.05);
+    }
+
+    .game-lib-thumb-contain img {
+        object-fit: contain;
     }
 
     .game-lib-body {
