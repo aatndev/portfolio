@@ -806,11 +806,327 @@
     }
 
     /* Games Library Page Grid */
+    /* ========================================================================
+       Games Page Layout (sidebar + main)
+       ======================================================================== */
+    .games-page-layout {
+        display: flex;
+        align-items: flex-start;
+        min-height: calc(100vh - 72px);
+        position: relative;
+    }
+
+    /* ========================================================================
+       Filter Sidebar
+       ======================================================================== */
+    .filter-sidebar {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 270px;
+        height: calc(100vh - 72px);
+        background: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-right: 1px solid var(--border-glass);
+        z-index: 200;
+        transform: translateX(-100%);
+        transition: transform var(--transition-smooth);
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,0.12) transparent;
+    }
+
+    .filter-sidebar.open {
+        transform: translateX(0);
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .filter-sidebar-inner {
+        padding: 24px 20px 40px;
+    }
+
+    .filter-sidebar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .filter-sidebar-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-heading);
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.3px;
+    }
+
+    .filter-sidebar-close {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        color: var(--text-secondary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--transition-fast);
+        flex-shrink: 0;
+    }
+
+    .filter-sidebar-close:hover {
+        background: rgba(255,255,255,0.12);
+        color: #ffffff;
+    }
+
+    /* Active filter chips inside sidebar */
+    .active-filters {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-glass);
+    }
+
+    .active-filters-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .active-filter-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        background: rgba(59, 130, 246, 0.15);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        border-radius: 999px;
+        color: #93c5fd;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .active-filter-chip:hover {
+        background: rgba(59, 130, 246, 0.25);
+        border-color: rgba(59, 130, 246, 0.6);
+    }
+
+    .filter-clear-all {
+        background: none;
+        border: none;
+        color: var(--accent-primary);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+        transition: color var(--transition-fast);
+        font-family: var(--font-body);
+    }
+
+    .filter-clear-all:hover {
+        color: #93c5fd;
+    }
+
+    /* Filter group */
+    .filter-group {
+        margin-bottom: 4px;
+    }
+
+    .filter-group-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-family: var(--font-heading);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 10px 0;
+        cursor: pointer;
+        transition: color var(--transition-fast);
+    }
+
+    .filter-group-header:hover {
+        color: #93c5fd;
+    }
+
+    .filter-group-chevron {
+        transition: transform var(--transition-fast);
+        flex-shrink: 0;
+        color: var(--text-secondary);
+    }
+
+    .filter-group-header[aria-expanded="false"] .filter-group-chevron {
+        transform: rotate(-90deg);
+    }
+
+    .filter-group-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        padding-bottom: 8px;
+    }
+
+    .filter-group-body.collapsed {
+        max-height: 0 !important;
+        padding-bottom: 0;
+    }
+
+    .filter-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 8px;
+        border-radius: 8px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        cursor: pointer;
+        transition: background var(--transition-fast), color var(--transition-fast);
+        user-select: none;
+    }
+
+    .filter-checkbox-label:hover {
+        background: rgba(255,255,255,0.05);
+        color: #ffffff;
+    }
+
+    .filter-checkbox-label input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        border: 1.5px solid rgba(255,255,255,0.25);
+        background: transparent;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        position: relative;
+    }
+
+    .filter-checkbox-label input[type="checkbox"]:checked {
+        background: var(--accent-primary);
+        border-color: var(--accent-primary);
+    }
+
+    .filter-checkbox-label input[type="checkbox"]:checked::after {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        width: 5px;
+        height: 9px;
+        border: 2px solid #ffffff;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg);
+    }
+
+    .filter-divider {
+        height: 1px;
+        background: var(--border-glass);
+        margin: 8px 0;
+    }
+
+    /* Overlay (mobile) */
+    .filter-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 199;
+        backdrop-filter: blur(2px);
+    }
+
+    .filter-overlay.active {
+        display: block;
+    }
+
+    /* ========================================================================
+       Games Main Content Area
+       ======================================================================== */
+    .games-main-content {
+        flex: 1;
+        min-width: 0;
+        transition: margin-left var(--transition-smooth);
+    }
+
+    /* Filter toggle bar (above grid) */
+    .filter-toggle-bar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 8px;
+    }
+
+    .filter-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 10px;
+        color: var(--text-secondary);
+        font-family: var(--font-heading);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .filter-toggle-btn:hover,
+    .filter-toggle-btn[aria-expanded="true"] {
+        background: rgba(255,255,255,0.1);
+        border-color: rgba(255,255,255,0.22);
+        color: #ffffff;
+    }
+
+    .filter-active-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 5px;
+        border-radius: 999px;
+        background: var(--accent-primary);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .games-count {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+
+    /* ========================================================================
+       Games Library Page Grid
+       ======================================================================== */
     .games-lib-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 28px;
         margin-top: 36px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 16px;
         margin-bottom: 60px;
     }
 
@@ -879,6 +1195,119 @@
         line-height: 1.5;
         margin-bottom: 16px;
         flex-grow: 1;
+    }
+
+    /* ========================================================================
+       Tags Row — single line with overflow "+N more" dropdown
+       ======================================================================== */
+    .game-lib-tags-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        overflow: visible;
+        position: relative;
+    }
+
+    .game-lib-tags-inline {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        overflow: hidden;
+        flex: 1;
+        min-width: 0;
+        flex-wrap: nowrap;
+    }
+
+    .tag-sm {
+        font-size: 12px;
+        padding: 4px 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .tag-input {
+        background: rgba(139, 92, 246, 0.12);
+        border-color: rgba(139, 92, 246, 0.4);
+        color: #c4b5fd;
+    }
+
+    .tag-jam {
+        background: rgba(224, 115, 60, 0.12);
+        border-color: rgba(224, 115, 60, 0.4);
+        color: #fdba74;
+    }
+
+    /* "+N more" trigger */
+    .tags-overflow-trigger {
+        position: relative;
+        flex-shrink: 0;
+        display: none;
+        align-items: center;
+    }
+
+    .tags-overflow-more {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        color: var(--text-secondary);
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: default;
+        transition: all var(--transition-fast);
+    }
+
+    .tags-overflow-trigger:hover .tags-overflow-more,
+    .tags-overflow-trigger:focus .tags-overflow-more {
+        background: rgba(255,255,255,0.1);
+        border-color: rgba(255,255,255,0.22);
+        color: #ffffff;
+    }
+
+    /* Dropdown panel */
+    .tags-overflow-dropdown {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        right: 0;
+        min-width: 180px;
+        max-width: 260px;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 12px;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(4px);
+        transition: opacity 0.18s ease, transform 0.18s ease;
+        z-index: 50;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
+    .tags-overflow-trigger:hover .tags-overflow-dropdown,
+    .tags-overflow-trigger:focus .tags-overflow-dropdown,
+    .tags-overflow-trigger:focus-within .tags-overflow-dropdown {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Empty state */
+    .games-empty-state {
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        text-align: center;
     }
 
     /* Grid System */
@@ -1234,6 +1663,17 @@
     /* Responsive */
 @media (max-width: 768px) {
 
+    /* Games lib grid: single column on mobile */
+    .games-lib-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Filter sidebar: full-width slide-in on mobile */
+    .filter-sidebar {
+        width: 85vw;
+        max-width: 320px;
+    }
+
     /* 🔝 Fix top tabs bar */
     .tabs {
         padding: 12px 20px; /* reduce side padding */
@@ -1242,6 +1682,7 @@
         gap: 10px;
         align-items: center;
     }
+
 
     .tab{
         display: flex;

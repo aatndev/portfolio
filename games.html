@@ -52,107 +52,481 @@
             </button>
         </nav>
     </header>
-    <main class="container" style="max-width: 1140px; margin: 0 auto; padding: 40px 24px 80px;">
-        <header class="page-hero fade-in">
-            <h1 class="page-hero-title">Games Library</h1>
-            <p class="page-hero-sub">Complete catalog of games, game jam submissions, and gameplay prototypes built with Unity & C#.</p>
-        </header>
 
-        <section class="games-lib-grid fade-in delay-1">
-            <!-- Game 1: Direct the Plane -->
-            <a href="direct-the-plane.html" class="game-lib-card">
-                <div class="game-lib-thumb game-lib-thumb-contain">
-                    <img src="https://img.itch.zone/aW1hZ2UvNDA1MDI3NS8yNDE1NDUyMy5wbmc=/original/lkAWi2.png" alt="Direct the Plane">
-                </div>
-                <div class="game-lib-body">
-                    <h3 class="game-lib-title">Direct the Plane</h3>
-                    <p class="game-lib-desc">A fast-paced endless flying game featuring boost mechanics, obstacle dodging, and navigating through continuously spawning pathways.</p>
-                    <div class="round-tags" style="margin-bottom: 16px;">
-                        <span class="tag">Windows</span>
-                        <span class="tag">macOS</span>
-                        <span class="tag">Android</span>
-                        <span class="tag">Web</span>
-                    </div>
-                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
-                </div>
-            </a>
+    <main class="games-page-layout">
 
-            <!-- Game 2: Resize to Fit -->
-            <a href="resize-to-fit.html" class="game-lib-card">
-                <div class="game-lib-thumb game-lib-thumb-contain", style="background: #C7E3EB;">
-                    <img src="https://img.itch.zone/aW1nLzI3ODY3NTkxLnBuZw==/315x250%23c/xZYvqr.png" alt="Resize to Fit">
-                </div>
-                <div class="game-lib-body">
-                    <h3 class="game-lib-title">Resize to Fit</h3>
-                    <p class="game-lib-desc">Endless obstacle game where you control a puck, scaling its size and positioning to fit through oncoming wall gaps and survive.</p>
-                    <div class="round-tags" style="margin-bottom: 16px;">
-                        <span class="tag">Windows</span>
-                        <span class="tag">Web</span>
-                    </div>
-                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
-                </div>
-            </a>
+        <!-- ===== LEFT FILTER SIDEBAR ===== -->
+        <aside class="filter-sidebar" id="filterSidebar" aria-label="Filter games">
+            <div class="filter-sidebar-inner">
 
-            <!-- Game 3: Fit the Window -->
-            <a href="fit-the-window.html" class="game-lib-card">
-                <div class="game-lib-thumb">
-                    <img src="https://img.itch.zone/aW1nLzI4NjIxODY3LnBuZw==/original/yyqaSf.png" alt="Fit the Window">
+                <div class="filter-sidebar-header">
+                    <span class="filter-sidebar-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                        Filters
+                    </span>
+                    <button class="filter-sidebar-close" id="filterSidebarClose" aria-label="Close filters">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
                 </div>
-                <div class="game-lib-body">
-                    <h3 class="game-lib-title">Fit the Window</h3>
-                    <p class="game-lib-desc">Unique mouse-controlled scaling game. Move and scroll to fit the window through obstacles without touching the walls.</p>
-                    <div class="round-tags" style="margin-bottom: 16px;">
-                        <span class="tag">Mouse Only</span>
-                        <span class="tag">Web</span>
-                        <span class="tag">Windows</span>
-                    </div>
-                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
-                </div>
-            </a>
 
-            <!-- Game 4: Save your Time -->
-            <a href="save-your-time.html" class="game-lib-card">
-                <div class="game-lib-thumb" style="background: radial-gradient(circle at center, #95945c 0%, #303020 50%, #10100a 100%); display: flex; align-items: center; justify-content: center;">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
+                <!-- Active filter chips -->
+                <div class="active-filters" id="activeFilters" style="display:none;">
+                    <div class="active-filters-chips" id="activeFilterChips"></div>
+                    <button class="filter-clear-all" id="clearAllFilters">Clear all</button>
                 </div>
-                <div class="game-lib-body">
-                    <h3 class="game-lib-title">Save your Time</h3>
-                    <p class="game-lib-desc">Parkour adventure game where your time ticks away whenever you move. Reach the goal with precision dash and sword mechanics.</p>
-                    <div class="round-tags" style="margin-bottom: 16px;">
-                        <span class="tag">Adventure</span>
-                        <span class="tag">Web</span>
-                    </div>
-                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
-                </div>
-            </a>
 
-            <!-- Game 5: Code Snippet Guess -->
-            <a href="code-snippet-guess.html" class="game-lib-card">
-                <div class="game-lib-thumb">
-                    <img src="https://img.itch.zone/aW1nLzIyNzA4Mjg3LnBuZw==/315x250%23c/N5Pue4.png" alt="Code Snippet Guess">
-                </div>
-                <div class="game-lib-body">
-                    <h3 class="game-lib-title">Code Snippet Guess</h3>
-                    <p class="game-lib-desc">An educational trivia quiz game where players guess the programming language shown in code snippets.</p>
-                    <div class="round-tags" style="margin-bottom: 16px;">
-                        <span class="tag">Educational</span>
-                        <span class="tag">Web</span>
+                <!-- Platform -->
+                <div class="filter-group">
+                    <button class="filter-group-header" aria-expanded="true" data-group="platform">
+                        <span>Platform</span>
+                        <svg class="filter-group-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-group-body" id="group-platform">
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="windows"> Windows
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="macos"> macOS
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="android"> Android
+                        </label>
+                        <!-- <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="ios"> iOS
+                        </label> -->
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="web"> Web
+                        </label>
+                        <!-- <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="platform" value="linux"> Linux
+                        </label> -->
                     </div>
-                    <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
                 </div>
-            </a>
-        </section>
+
+                <div class="filter-divider"></div>
+
+                <!-- Input Controls -->
+                <div class="filter-group">
+                    <button class="filter-group-header" aria-expanded="true" data-group="input">
+                        <span>Input Controls</span>
+                        <svg class="filter-group-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-group-body" id="group-input">
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="input" value="keyboard-and-mouse"> Keyboard &amp; Mouse
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="input" value="mouse-only"> Mouse Only
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="input" value="gamepad"> Gamepad
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="input" value="mobile"> Mobile / Touch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-divider"></div>
+
+                <!-- Game Type -->
+                <div class="filter-group">
+                    <button class="filter-group-header" aria-expanded="true" data-group="others">
+                        <span>Others</span>
+                        <svg class="filter-group-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-group-body" id="group-others">
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" class="filter-cb" data-filter-type="others" value="jam"> Jam Games
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile -->
+        <div class="filter-overlay" id="filterOverlay"></div>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <div class="games-main-content">
+            <div style="max-width: 1000px; margin: 0 auto; padding: 0 24px 80px;">
+
+                <header class="page-hero fade-in" style="padding: 50px 0 30px; text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h1 class="page-hero-title">Games Library</h1>
+                    <p class="page-hero-sub">Complete catalog of games, game jam submissions, and gameplay prototypes built with Unity &amp; C#.</p>
+                </header>
+
+                <!-- Filter toggle bar -->
+                <div class="filter-toggle-bar fade-in delay-1">
+                    <button class="filter-toggle-btn" id="filterToggleBtn" aria-expanded="false" aria-controls="filterSidebar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                        Filters
+                        <span class="filter-active-count" id="filterActiveCount" style="display:none;">0</span>
+                    </button>
+                    <span class="games-count" id="gamesCount">5 games</span>
+                </div>
+
+                <section class="games-lib-grid fade-in delay-1" id="gamesGrid">
+
+                    <!-- Game 1: Direct the Plane -->
+                    <a href="direct-the-plane.html" class="game-lib-card"
+                        data-platform="windows macos android web"
+                        data-input="keyboard-and-mouse mobile gamepad">
+                        <div class="game-lib-thumb game-lib-thumb-contain">
+                            <img src="https://img.itch.zone/aW1hZ2UvNDA1MDI3NS8yNDE1NDUyMy5wbmc=/original/lkAWi2.png" alt="Direct the Plane">
+                        </div>
+                        <div class="game-lib-body">
+                            <h3 class="game-lib-title">Direct the Plane</h3>
+                            <p class="game-lib-desc">A fast-paced endless flying game featuring boost mechanics, obstacle dodging, and navigating through continuously spawning pathways.</p>
+                            <div class="game-lib-tags-row">
+                                <div class="game-lib-tags-inline" role="list">
+                                    <span class="tag tag-sm" role="listitem">Windows</span>
+                                    <span class="tag tag-sm" role="listitem">macOS</span>
+                                    <span class="tag tag-sm" role="listitem">Android</span>
+                                    <span class="tag tag-sm" role="listitem">Web</span>
+                                </div>
+                                <div class="tags-overflow-trigger" tabindex="0" aria-label="Show all tags">
+                                    <span class="tags-overflow-more">+4 more</span>
+                                    <div class="tags-overflow-dropdown" role="tooltip">
+                                        <span class="tag tag-sm">Windows</span>
+                                        <span class="tag tag-sm">macOS</span>
+                                        <span class="tag tag-sm">Android</span>
+                                        <span class="tag tag-sm">Web</span>
+                                        <span class="tag tag-sm tag-input">Keyboard &amp; Mouse</span>
+                                        <span class="tag tag-sm tag-input">Mobile</span>
+                                        <span class="tag tag-sm tag-input">Gamepad</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                        </div>
+                    </a>
+
+                    <!-- Game 2: Resize to Fit -->
+                    <a href="resize-to-fit.html" class="game-lib-card"
+                        data-platform="windows web"
+                        data-input="keyboard-and-mouse gamepad">
+                        <div class="game-lib-thumb game-lib-thumb-contain" style="background: #C7E3EB;">
+                            <img src="https://img.itch.zone/aW1nLzI3ODY3NTkxLnBuZw==/315x250%23c/xZYvqr.png" alt="Resize to Fit">
+                        </div>
+                        <div class="game-lib-body">
+                            <h3 class="game-lib-title">Resize to Fit</h3>
+                            <p class="game-lib-desc">Endless obstacle game where you control a puck, scaling its size and positioning to fit through oncoming wall gaps and survive.</p>
+                            <div class="game-lib-tags-row">
+                                <div class="game-lib-tags-inline" role="list">
+                                    <span class="tag tag-sm" role="listitem">Windows</span>
+                                    <span class="tag tag-sm" role="listitem">Web</span>
+                                </div>
+                                <div class="tags-overflow-trigger" tabindex="0" aria-label="Show all tags">
+                                    <span class="tags-overflow-more">+3 more</span>
+                                    <div class="tags-overflow-dropdown" role="tooltip">
+                                        <span class="tag tag-sm">Windows</span>
+                                        <span class="tag tag-sm">Web</span>
+                                        <span class="tag tag-sm tag-input">Keyboard</span>
+                                        <span class="tag tag-sm tag-input">Gamepad</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                        </div>
+                    </a>
+
+                    <!-- Game 3: Fit the Window -->
+                    <a href="fit-the-window.html" class="game-lib-card"
+                        data-platform="windows web"
+                        data-input="mouse-only">
+                        <div class="game-lib-thumb">
+                            <img src="https://img.itch.zone/aW1nLzI4NjIxODY3LnBuZw==/original/yyqaSf.png" alt="Fit the Window">
+                        </div>
+                        <div class="game-lib-body">
+                            <h3 class="game-lib-title">Fit the Window</h3>
+                            <p class="game-lib-desc">Unique mouse-controlled scaling game. Move and scroll to fit the window through obstacles without touching the walls.</p>
+                            <div class="game-lib-tags-row">
+                                <div class="game-lib-tags-inline" role="list">
+                                    <span class="tag tag-sm" role="listitem">Mouse Only</span>
+                                    <span class="tag tag-sm" role="listitem">Web</span>
+                                    <span class="tag tag-sm" role="listitem">Windows</span>
+                                </div>
+                                <div class="tags-overflow-trigger" tabindex="0" aria-label="Show all tags">
+                                    <span class="tags-overflow-more">+3 more</span>
+                                    <div class="tags-overflow-dropdown" role="tooltip">
+                                        <span class="tag tag-sm">Windows</span>
+                                        <span class="tag tag-sm">Web</span>
+                                        <span class="tag tag-sm tag-input">Mouse Only</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                        </div>
+                    </a>
+
+                    <!-- Game 4: Save your Time -->
+                    <a href="save-your-time.html" class="game-lib-card"
+                        data-platform="web"
+                        data-input="keyboard-and-mouse"
+                        data-others="jam">
+                        <div class="game-lib-thumb" style="background: radial-gradient(circle at center, #95945c 0%, #303020 50%, #10100a 100%); display: flex; align-items: center; justify-content: center;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="game-lib-body">
+                            <h3 class="game-lib-title">Save your Time</h3>
+                            <p class="game-lib-desc">Parkour adventure game where your time ticks away whenever you move. Reach the goal with precision dash and sword mechanics.</p>
+                            <div class="game-lib-tags-row">
+                                <div class="game-lib-tags-inline" role="list">
+                                    <span class="tag tag-sm" role="listitem">Jam Game</span>
+                                    <span class="tag tag-sm" role="listitem">Web</span>
+                                </div>
+                                <div class="tags-overflow-trigger" tabindex="0" aria-label="Show all tags">
+                                    <span class="tags-overflow-more">+2 more</span>
+                                    <div class="tags-overflow-dropdown" role="tooltip">
+                                        <span class="tag tag-sm tag-jam">Jam Game</span>
+                                        <span class="tag tag-sm">Web</span>
+                                        <span class="tag tag-sm tag-input">Keyboard &amp; Mouse</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                        </div>
+                    </a>
+
+                    <!-- Game 5: Code Snippet Guess -->
+                    <a href="code-snippet-guess.html" class="game-lib-card"
+                        data-platform="web"
+                        data-input="keyboard-and-mouse">
+                        <div class="game-lib-thumb">
+                            <img src="https://img.itch.zone/aW1nLzIyNzA4Mjg3LnBuZw==/315x250%23c/N5Pue4.png" alt="Code Snippet Guess">
+                        </div>
+                        <div class="game-lib-body">
+                            <h3 class="game-lib-title">Code Snippet Guess</h3>
+                            <p class="game-lib-desc">An educational trivia quiz game where players guess the programming language shown in code snippets.</p>
+                            <div class="game-lib-tags-row">
+                                <div class="game-lib-tags-inline" role="list">
+                                    <span class="tag tag-sm" role="listitem">Web</span>
+                                </div>
+                                <div class="tags-overflow-trigger" tabindex="0" aria-label="Show all tags">
+                                    <span class="tags-overflow-more">+2 more</span>
+                                    <div class="tags-overflow-dropdown" role="tooltip">
+                                        <span class="tag tag-sm">Web</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="btn btn-primary" style="align-self: flex-start;">View Details</span>
+                        </div>
+                    </a>
+
+                    <!-- Empty state -->
+                    <div class="games-empty-state" id="gamesEmptyState" style="display:none;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.3; margin-bottom: 16px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <p style="color: var(--text-secondary); font-size: 15px;">No games match your filters.</p>
+                        <button class="filter-clear-all" id="clearFiltersEmpty" style="margin-top: 12px;">Clear filters</button>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
     </main>
 
     <!-- Global Footer -->
     <footer style="text-align: center; padding: 40px 20px 30px; color: var(--text-secondary); font-size: 14px; border-top: 1px solid var(--border-glass);">
-        <p>© 2026 Aadithyan (<a href="https://aatndev.itch.io" target="_blank" style="color: #60a5fa; text-decoration: none;">@aatndev</a>). Built with Unity & passion.</p>
+        <p>© 2026 Aadithyan (<a href="https://aatndev.itch.io" target="_blank" style="color: #60a5fa; text-decoration: none;">@aatndev</a>). Built with Unity &amp; passion.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // ===================== FILTER SIDEBAR LOGIC =====================
+    (function() {
+        const sidebar = document.getElementById('filterSidebar');
+        const overlay = document.getElementById('filterOverlay');
+        const toggleBtn = document.getElementById('filterToggleBtn');
+        const closeBtn = document.getElementById('filterSidebarClose');
+        const gamesGrid = document.getElementById('gamesGrid');
+        const gamesCount = document.getElementById('gamesCount');
+        const activeFiltersEl = document.getElementById('activeFilters');
+        const activeFilterChips = document.getElementById('activeFilterChips');
+        const filterActiveCount = document.getElementById('filterActiveCount');
+        const emptyState = document.getElementById('gamesEmptyState');
+        const allCards = Array.from(document.querySelectorAll('.game-lib-card[data-platform]'));
+
+        // --- Open / Close sidebar ---
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = window.innerWidth < 900 ? 'hidden' : '';
+        }
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        });
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // --- Collapsible groups ---
+        document.querySelectorAll('.filter-group-header').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                const groupId = 'group-' + btn.dataset.group;
+                const body = document.getElementById(groupId);
+                btn.setAttribute('aria-expanded', String(!expanded));
+                body.style.maxHeight = expanded ? '0' : body.scrollHeight + 'px';
+                body.classList.toggle('collapsed', expanded);
+            });
+            // init: set max-height to scrollHeight
+            const groupId = 'group-' + btn.dataset.group;
+            const body = document.getElementById(groupId);
+            body.style.maxHeight = body.scrollHeight + 'px';
+        });
+
+        // --- Filtering ---
+        function getChecked() {
+            const checked = { platform: [], input: [], others: [] };
+            document.querySelectorAll('.filter-cb:checked').forEach(cb => {
+                checked[cb.dataset.filterType].push(cb.value);
+            });
+            return checked;
+        }
+
+        function cardMatches(card, filters) {
+            const cp = (card.dataset.platform || '').toLowerCase();
+            const ci = (card.dataset.input || '').toLowerCase();
+            const cg = (card.dataset.others || '').toLowerCase();
+
+            if (filters.platform.length && !filters.platform.some(v => cp.includes(v))) return false;
+            if (filters.input.length && !filters.input.some(v => ci.includes(v))) return false;
+            if (filters.others.length && !filters.others.some(v => cg.includes(v))) return false;
+            return true;
+        }
+
+        function applyFilters() {
+            const filters = getChecked();
+            const totalActive = filters.platform.length + filters.input.length + filters.others.length;
+            let visible = 0;
+
+            allCards.forEach(card => {
+                const show = cardMatches(card, filters);
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            // count badge
+            if (totalActive > 0) {
+                filterActiveCount.textContent = totalActive;
+                filterActiveCount.style.display = '';
+            } else {
+                filterActiveCount.style.display = 'none';
+            }
+
+            // active chips
+            renderActiveChips(filters);
+
+            // games count
+            gamesCount.textContent = visible + ' game' + (visible !== 1 ? 's' : '');
+
+            // empty state
+            emptyState.style.display = visible === 0 ? 'flex' : 'none';
+        }
+
+        const labelMap = {
+            windows: 'Windows', macos: 'macOS', android: 'Android', ios: 'iOS',
+            web: 'Web', linux: 'Linux',
+            'keyboard-and-mouse': 'Keyboard & Mouse', 'mouse-only': 'Mouse Only',
+            gamepad: 'Gamepad', mobile: 'Mobile / Touch',
+            jam: 'Jam Games'
+        };
+
+        function renderActiveChips(filters) {
+            const allActive = [
+                ...filters.platform.map(v => ({ type: 'platform', value: v })),
+                ...filters.input.map(v => ({ type: 'input', value: v })),
+                ...filters.others.map(v => ({ type: 'others', value: v })),
+            ];
+            if (allActive.length === 0) {
+                activeFiltersEl.style.display = 'none';
+                return;
+            }
+            activeFiltersEl.style.display = '';
+            activeFilterChips.innerHTML = allActive.map(f =>
+                `<button class="active-filter-chip" data-type="${f.type}" data-value="${f.value}">
+                    ${labelMap[f.value] || f.value}
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>`
+            ).join('');
+
+            activeFilterChips.querySelectorAll('.active-filter-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const cb = document.querySelector(`.filter-cb[data-filter-type="${chip.dataset.type}"][value="${chip.dataset.value}"]`);
+                    if (cb) { cb.checked = false; applyFilters(); }
+                });
+            });
+        }
+
+        function clearAll() {
+            document.querySelectorAll('.filter-cb:checked').forEach(cb => cb.checked = false);
+            applyFilters();
+        }
+
+        document.getElementById('clearAllFilters').addEventListener('click', clearAll);
+        document.getElementById('clearFiltersEmpty').addEventListener('click', clearAll);
+        document.querySelectorAll('.filter-cb').forEach(cb => cb.addEventListener('change', applyFilters));
+
+        // ===================== TAGS OVERFLOW DROPDOWN =====================
+        // "+N" = (all tags in dropdown) minus (visible inline tags)
+        function initTagsOverflow() {
+            document.querySelectorAll('.game-lib-card').forEach(card => {
+                const inline = card.querySelector('.game-lib-tags-inline');
+                const trigger = card.querySelector('.tags-overflow-trigger');
+                if (!inline || !trigger) return;
+
+                const inlineTags = Array.from(inline.querySelectorAll('.tag'));
+                const dropdownTags = Array.from(trigger.querySelectorAll('.tags-overflow-dropdown .tag'));
+
+                // Reset visibility
+                inlineTags.forEach(t => t.style.display = '');
+                trigger.style.display = 'none';
+
+                // Figure out how many inline tags overflow due to width
+                const rowWidth = inline.parentElement.clientWidth - 50;
+                let usedWidth = 0;
+                let overflowedInline = 0;
+
+                inlineTags.forEach(tag => {
+                    usedWidth += tag.offsetWidth + 8;
+                    if (usedWidth > rowWidth) {
+                        tag.style.display = 'none';
+                        overflowedInline++;
+                    }
+                });
+
+                // Total extra = overflowed inline tags + dropdown-only tags (input, jam, etc.)
+                const visibleInlineCount = inlineTags.length - overflowedInline;
+                // Count dropdown tags that aren't duplicates of visible inline tags
+                // Simpler: total dropdown tags - visible inline count
+                const extraCount = dropdownTags.length - visibleInlineCount;
+
+                if (extraCount > 0) {
+                    trigger.style.display = 'flex';
+                    const moreEl = trigger.querySelector('.tags-overflow-more');
+                    if (moreEl) moreEl.textContent = '+' + extraCount;
+                }
+            });
+        }
+
+
+        initTagsOverflow();
+        window.addEventListener('resize', initTagsOverflow);
+    })();
+    </script>
 </body>
 
 </html>
