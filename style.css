@@ -240,7 +240,7 @@
     }
 
     /* ==========================================================================
-       Amy Elliot Inspired Hero Section
+       Hero Section
        ========================================================================== */
     .hero-section {
         position: relative;
@@ -288,18 +288,31 @@
         position: relative;
         z-index: 2;
         max-width: 850px;
+        max-width: 960px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .hero-text {
+        text-align: left;
+        flex: 1;
+        max-width: 580px;
     }
 
     .hero-title {
         font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
         font-weight: 800;
         font-family: var(--font-heading);
         color: #ffffff;
         margin-bottom: 12px;
+        margin-bottom: 10px;
         letter-spacing: -0.5px;
         line-height: 1.15;
         text-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
@@ -307,9 +320,11 @@
 
     .hero-subtitle {
         font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
         font-weight: 500;
         color: #cbd5e1;
         margin-bottom: 24px;
+        margin-bottom: 0;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
@@ -319,14 +334,24 @@
         height: 1px;
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
         margin: 8px auto 28px;
+        width: 1.5px;
+        height: 130px;
+        background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0.4) 80%, transparent);
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .hero-buttons {
         display: flex;
         align-items: center;
+        flex-direction: column;
+        align-items: stretch;
         justify-content: center;
         gap: 16px;
         flex-wrap: wrap;
+        gap: 12px;
+        flex-shrink: 0;
+        min-width: 160px;
     }
 
     .hero-pill-btn {
@@ -1877,5 +1902,28 @@
     /*round*/
     .long-round {
         border-radius: px;
+    }
+
+    /* Hero Section Mobile */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-divider {
+        width: 180px;
+        height: 1.5px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        margin: 4px auto;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 220px;
     }
 } 
